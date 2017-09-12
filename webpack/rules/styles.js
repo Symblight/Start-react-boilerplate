@@ -12,7 +12,7 @@ if (define.is_generate_css){
         test: /\.sass|scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader?url=false!postcss-loader!sass-loader?url=false'
+          use: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'
         })
     })
 } else {

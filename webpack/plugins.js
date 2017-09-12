@@ -6,10 +6,11 @@ const define = require('./define');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const plugins = [
-			new webpack.optimize.ModuleConcatenationPlugin(),
-		    new HtmlWebpackPlugin({
-		    template: 'index.html',
-		  })
+		new webpack.optimize.ModuleConcatenationPlugin(),
+		new HtmlWebpackPlugin({
+			template: 'index.html',
+			inject: true,
+		})
 ];
 
 if (define.is_production){
