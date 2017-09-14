@@ -5,7 +5,7 @@ const rules = [
                     test: /\.(jpg|png|svg)$/,
                     loader: 'file-loader',
                     options: {
-                        name: 'images/[name].[ext]'
+                        name: 'assets/images/[name]-[hash].[ext]'
                     },
                 },
     ]

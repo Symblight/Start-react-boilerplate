@@ -24,6 +24,7 @@ app.use(morgan('dev'));
 
 app.use(webpackDevMiddleware(compiler,{
 	hot: true,
+	publicPath: '/',
 	stats:{
 		colors: 	true,
         hash: 		false,
