@@ -8,15 +8,23 @@ const plugins = require('./webpack/plugins.js');
 
 const isProduction = process.env.NODE_ENV.trim() === "production";
 
-module.exports = {
-    devtool: isProduction ? false : 'source-map',
-    entry:{
-        app:[
+const developmentConfig = {
+		app:[
             'webpack-hot-middleware/client?reload=true',
             'react-hot-loader/patch',
-            path.join(__dirname, 'app/main.js')
-        ]
-    },
+			path.join(__dirname, 'app/main.js'),
+		]
+}
+
+const productionConfig = {
+	app:[
+		path.join(__dirname, 'app/main.js'),
+	]
+}
+
+module.exports = {
+    devtool: isProduction ? false : 'source-map',
+    entry: isProduction? productionConfig : developmentConfig,
 	output: {
 		filename: '[name].bundle.js',
     	publicPath: '',

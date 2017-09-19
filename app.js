@@ -12,7 +12,7 @@ const port = process.env.PORT || '8080';
 
 app.use(express.static(path.join(__dirname, 'dist')));
 app.get('/', function(){
-    res.sendFile('./index.html');
+    res.sendFile(path.join(__dirname + './index.html'));
 });
 
 app.disable('x-powered-by');
