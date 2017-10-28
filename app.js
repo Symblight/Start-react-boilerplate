@@ -1,27 +1,24 @@
-'use strict';
-
-const express = require('express');
-const http = require('http');
-const path = require('path');
-const bodyParser = require('body-parser');
-const favicon = require('serve-favicon');
+import express from 'express';
+import http from 'http';
+import bodyParser from 'body-parser';
+import path from 'path';
 
 const app = express();
 
 const port = process.env.PORT || '8080';
 
 app.use(express.static(path.join(__dirname, 'dist')));
-app.get('/', function(){
-    res.sendFile(path.join(__dirname + './index.html'));
+app.get('/', (res) => {
+  res.sendFile(path.join(`${__dirname}./index.html`));
 });
 
 app.disable('x-powered-by');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-const server = http.createServer(app).listen(port, function(){
-    console.log('server is up')
+const server = http.createServer(app).listen(port, () => {
+  console.info('server is up');
 });
 
-module.exports = app;
+export default app;
