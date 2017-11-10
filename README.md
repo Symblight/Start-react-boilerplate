@@ -1,4 +1,4 @@
-# StartReact
+# Start-react-boilerplate
 
 Webpack 2 and React, Express - start project
 
@@ -24,11 +24,21 @@ Webpack 2 and React, Express - start project
 ```
 $ npm install
 ```
+or
+
+```
+$ yarn
+```
 
 ## Running in dev mode
 
 ```
 $ npm run dev
+```
+or
+
+```
+$ yarn run dev
 ```
 
 ## Build client (production)
@@ -36,17 +46,32 @@ $ npm run dev
 ```
 $ npm run build
 ```
+or
+
+```
+$ yarn run build
+```
 
 ## Running client
 
 ```
 $ npm start
 ```
+or
+
+```
+$ yarn start
+```
 
 ## Remove dist folder
 
 ```
 $ npm run clean
+```
+or
+
+```
+$ yarn run clean
 ```
 
 ## Changelog
